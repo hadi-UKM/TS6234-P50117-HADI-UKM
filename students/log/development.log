@@ -1,0 +1,997 @@
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-20 00:56:16) [GET]
+  [4;36;1mStudent Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: students: SELECT * FROM "students" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: students: SELECT * FROM "students" ):
+  app/controllers/students_controller.rb:5:in `index'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (172.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateStudents (20090719165529)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nama" varchar(255), "matrik" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090719165529')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("students")[0m
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-20 01:00:08) [GET]
+  [4;35;1mStudent Load (0.0ms)[0m   [0mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 6147ms (View: 6131, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#new (for 127.0.0.1 at 2009-07-20 01:01:10) [GET]
+Rendering template within layouts/students
+Rendering students/new
+
+ActionView::TemplateError (undefined method `name' for #<Student:0x5c2c978>) on line #8 of app/views/students/new.html.erb:
+5: 
+6:   <p>
+7:     <%= f.label :name %><br />
+8:     <%= f.text_field :name %>
+9:   </p>
+10:   <p>
+11:     <%= f.label :matrik %><br />
+
+    app/views/students/new.html.erb:8
+    app/views/students/new.html.erb:3
+    app/controllers/students_controller.rb:29:in `new'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (225.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-20 01:01:13) [GET]
+  [4;36;1mStudent Load (1.0ms)[0m   [0;1mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 26ms (View: 6, DB: 1) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#new (for 127.0.0.1 at 2009-07-20 01:01:24) [GET]
+Rendering template within layouts/students
+Rendering students/new
+
+ActionView::TemplateError (undefined method `name' for #<Student:0x5c78044>) on line #8 of app/views/students/new.html.erb:
+5: 
+6:   <p>
+7:     <%= f.label :name %><br />
+8:     <%= f.text_field :name %>
+9:   </p>
+10:   <p>
+11:     <%= f.label :matrik %><br />
+
+    app/views/students/new.html.erb:8
+    app/views/students/new.html.erb:3
+    app/controllers/students_controller.rb:29:in `new'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (227.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-20 01:01:33) [GET]
+  [4;35;1mStudent Load (0.0ms)[0m   [0mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 31ms (View: 0, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#new (for 127.0.0.1 at 2009-07-20 01:05:04) [GET]
+Rendering template within layouts/students
+Rendering students/new
+
+ActionView::TemplateError (undefined method `name' for #<Student:0x5cbad18>) on line #8 of app/views/students/new.html.erb:
+5: 
+6:   <p>
+7:     <%= f.label :name %><br />
+8:     <%= f.text_field :name %>
+9:   </p>
+10:   <p>
+11:     <%= f.label :matrik %><br />
+
+    app/views/students/new.html.erb:8
+    app/views/students/new.html.erb:3
+    app/controllers/students_controller.rb:29:in `new'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (202.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-20 01:06:11) [GET]
+  [4;36;1mStudent Load (0.0ms)[0m   [0;1mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#new (for 127.0.0.1 at 2009-07-20 01:06:16) [GET]
+Rendering template within layouts/students
+Rendering students/new
+
+ActionView::TemplateError (undefined method `name' for #<Student:0x43d747c>) on line #8 of app/views/students/new.html.erb:
+5: 
+6:   <p>
+7:     <%= f.label :name %><br />
+8:     <%= f.text_field :name %>
+9:   </p>
+10:   <p>
+11:     <%= f.label :matrik %><br />
+
+    app/views/students/new.html.erb:8
+    app/views/students/new.html.erb:3
+    app/controllers/students_controller.rb:29:in `new'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (203.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-20 01:06:25) [GET]
+  [4;35;1mStudent Load (0.0ms)[0m   [0mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 31ms (View: 0, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-20 01:06:30) [GET]
+  [4;36;1mStudent Load (0.0ms)[0m   [0;1mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 31ms (View: 16, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2009-07-20 01:06:34) [GET]
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Completed in 297ms (View: 32, DB: 0) | 200 OK [http://localhost/rails/info/properties]
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-20 01:06:52) [GET]
+  [4;35;1mStudent Load (0.0ms)[0m   [0mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2009-07-20 01:39:06) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Completed in 171ms (View: 31, DB: 0) | 200 OK [http://localhost/rails/info/properties]
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateStudents (20090719165529)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("students")[0m
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-20 01:41:43) [GET]
+  [4;36;1mStudent Load (0.0ms)[0m   [0;1mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 6022ms (View: 6006, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#new (for 127.0.0.1 at 2009-07-20 01:41:52) [GET]
+Rendering template within layouts/students
+Rendering students/new
+
+ActionView::TemplateError (undefined method `kad_matrik' for #<Student:0x4aa6fdc>) on line #12 of app/views/students/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :kad_matrik %><br />
+12:     <%= f.text_field :kad_matrik %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :email %><br />
+
+    app/views/students/new.html.erb:12
+    app/views/students/new.html.erb:3
+    app/controllers/students_controller.rb:29:in `new'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (219.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-20 01:41:59) [GET]
+  [4;35;1mStudent Load (0.0ms)[0m   [0mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 32ms (View: 16, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#new (for 127.0.0.1 at 2009-07-20 01:42:03) [GET]
+Rendering template within layouts/students
+Rendering students/new
+
+ActionView::TemplateError (undefined method `kad_matrik' for #<Student:0x4958310>) on line #12 of app/views/students/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :kad_matrik %><br />
+12:     <%= f.text_field :kad_matrik %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :email %><br />
+
+    app/views/students/new.html.erb:12
+    app/views/students/new.html.erb:3
+    app/controllers/students_controller.rb:29:in `new'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (203.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-20 01:42:20) [GET]
+  [4;36;1mStudent Load (0.0ms)[0m   [0;1mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 31ms (View: 0, DB: 0) | 200 OK [http://localhost/students]
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateStudents (20090719165529)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("students")[0m
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-20 01:46:22) [GET]
+  [4;36;1mStudent Load (0.0ms)[0m   [0;1mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 63ms (View: 47, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#new (for 127.0.0.1 at 2009-07-20 01:46:24) [GET]
+Rendering template within layouts/students
+Rendering students/new
+Completed in 63ms (View: 31, DB: 0) | 200 OK [http://localhost/students/new]
+
+
+Processing StudentsController#create (for 127.0.0.1 at 2009-07-20 01:48:12) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"pk/JuFf2o8LasjmuUnaLhr4CcyjvGiTxSydRIrBasd8=", "student"=>{"nama"=>"Abdul Hadi Jehmica", "matrik"=>"P50117", "email"=>"hadiFedEx@gmail.com"}}
+  [4;35;1mStudent Create (0.0ms)[0m   [0mINSERT INTO "students" ("updated_at", "nama", "matrik", "email", "created_at") VALUES('2009-07-19 17:48:12', 'Abdul Hadi Jehmica', 'P50117', 'hadiFedEx@gmail.com', '2009-07-19 17:48:12')[0m
+Redirected to http://localhost:3000/students/1
+Completed in 212ms (DB: 0) | 302 Found [http://localhost/students]
+
+
+Processing StudentsController#show (for 127.0.0.1 at 2009-07-20 01:48:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mStudent Load (0.0ms)[0m   [0;1mSELECT * FROM "students" WHERE ("students"."id" = 1) [0m
+Rendering template within layouts/students
+Rendering students/show
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/students/1]
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-20 01:48:17) [GET]
+  [4;35;1mStudent Load (0.0ms)[0m   [0mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 78ms (View: 16, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#new (for 127.0.0.1 at 2009-07-20 01:48:19) [GET]
+Rendering template within layouts/students
+Rendering students/new
+Completed in 47ms (View: 16, DB: 0) | 200 OK [http://localhost/students/new]
+
+
+Processing StudentsController#create (for 127.0.0.1 at 2009-07-20 01:49:03) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"pk/JuFf2o8LasjmuUnaLhr4CcyjvGiTxSydRIrBasd8=", "student"=>{"nama"=>"Wan Nor Azura", "matrik"=>"P47725", "email"=>"azurawn@yahoo.com"}}
+  [4;36;1mStudent Create (0.0ms)[0m   [0;1mINSERT INTO "students" ("updated_at", "nama", "matrik", "email", "created_at") VALUES('2009-07-19 17:49:03', 'Wan Nor Azura', 'P47725', 'azurawn@yahoo.com', '2009-07-19 17:49:03')[0m
+Redirected to http://localhost:3000/students/2
+Completed in 47ms (DB: 0) | 302 Found [http://localhost/students]
+
+
+Processing StudentsController#show (for 127.0.0.1 at 2009-07-20 01:49:04) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mStudent Load (1.0ms)[0m   [0mSELECT * FROM "students" WHERE ("students"."id" = 2) [0m
+Rendering template within layouts/students
+Rendering students/show
+Completed in 36ms (View: 11, DB: 1) | 200 OK [http://localhost/students/2]
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-20 01:49:06) [GET]
+  [4;36;1mStudent Load (0.0ms)[0m   [0;1mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 47ms (View: 16, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 01:56:29) [GET]
+
+ActionController::RoutingError (No route matches "/tickets" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 01:56:30) [GET]
+
+ActionController::RoutingError (No route matches "/tickets" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-20 01:57:16) [GET]
+  [4;35;1mStudent Load (0.0ms)[0m   [0mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 31ms (View: 15, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 01:57:25) [GET]
+
+ActionController::RoutingError (No route matches "/tickets" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 01:57:25) [GET]
+
+ActionController::RoutingError (No route matches "/tickets" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-20 02:01:00) [GET]
+  [4;36;1mStudent Load (0.0ms)[0m   [0;1mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 78ms (View: 31, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 02:02:32) [GET]
+
+ActionController::RoutingError (No route matches "/tickets" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 02:02:32) [GET]
+
+ActionController::RoutingError (No route matches "/tickets" with {:method=>:get}):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-20 02:02:44) [GET]
+  [4;35;1mStudent Load (0.0ms)[0m   [0mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 46ms (View: 15, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#edit (for 127.0.0.1 at 2009-07-20 02:02:53) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mStudent Load (1.0ms)[0m   [0;1mSELECT * FROM "students" WHERE ("students"."id" = 2) [0m
+Rendering template within layouts/students
+Rendering students/edit
+Completed in 82ms (View: 44, DB: 1) | 200 OK [http://localhost/students/2/edit]
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-20 02:02:56) [GET]
+  [4;35;1mStudent Load (0.0ms)[0m   [0mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 62ms (View: 31, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-20 09:27:54) [GET]
+  [4;36;1mStudent Load (0.0ms)[0m   [0;1mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 5991ms (View: 5975, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#new (for 127.0.0.1 at 2009-07-20 09:50:42) [GET]
+Rendering template within layouts/students
+Rendering students/new
+Completed in 62ms (View: 31, DB: 0) | 200 OK [http://localhost/students/new]
+
+
+Processing StudentsController#create (for 127.0.0.1 at 2009-07-20 09:51:21) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"yd9NpvPvRA7L6nOChguOW1baEBgrVkb0vykCxITFiQg=", "student"=>{"nama"=>"Mohd Asri Stambul", "matrik"=>"P50093", "email"=>"asri@jpa.gov.my"}}
+  [4;35;1mStudent Create (1.0ms)[0m   [0mINSERT INTO "students" ("updated_at", "nama", "matrik", "email", "created_at") VALUES('2009-07-20 01:51:21', 'Mohd Asri Stambul', 'P50093', 'asri@jpa.gov.my', '2009-07-20 01:51:21')[0m
+Redirected to http://localhost:3000/students/3
+Completed in 102ms (DB: 1) | 302 Found [http://localhost/students]
+
+
+Processing StudentsController#show (for 127.0.0.1 at 2009-07-20 09:51:21) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mStudent Load (0.0ms)[0m   [0;1mSELECT * FROM "students" WHERE ("students"."id" = 3) [0m
+Rendering template within layouts/students
+Rendering students/show
+Completed in 47ms (View: 16, DB: 0) | 200 OK [http://localhost/students/3]
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-20 09:51:23) [GET]
+  [4;35;1mStudent Load (2.0ms)[0m   [0mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 74ms (View: 49, DB: 2) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-20 10:29:54) [GET]
+  [4;36;1mStudent Load (0.0ms)[0m   [0;1mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 62ms (View: 47, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-20 10:30:19) [GET]
+  [4;35;1mStudent Load (0.0ms)[0m   [0mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 62ms (View: 31, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-27 10:55:53) [GET]
+  [4;36;1mStudent Load (0.0ms)[0m   [0;1mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 6084ms (View: 6053, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#new (for 127.0.0.1 at 2009-07-27 10:56:02) [GET]
+Rendering template within layouts/students
+Rendering students/new
+Completed in 63ms (View: 31, DB: 0) | 200 OK [http://localhost/students/new]
+
+
+Processing StudentsController#create (for 127.0.0.1 at 2009-07-27 10:56:32) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"moBrvq4crqcTvS6cZC5TtuVtzIBzyQ/jPYXXgb2llUs=", "student"=>{"nama"=>"apa-apa je", "matrik"=>"P50007", "email"=>"apaapaje@jpa.gov.my"}}
+  [4;35;1mStudent Create (0.0ms)[0m   [0mINSERT INTO "students" ("updated_at", "nama", "matrik", "email", "created_at") VALUES('2009-07-27 02:56:32', 'apa-apa je', 'P50007', 'apaapaje@jpa.gov.my', '2009-07-27 02:56:32')[0m
+Redirected to http://localhost:3000/students/4
+Completed in 228ms (DB: 0) | 302 Found [http://localhost/students]
+
+
+Processing StudentsController#show (for 127.0.0.1 at 2009-07-27 10:56:33) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mStudent Load (0.0ms)[0m   [0;1mSELECT * FROM "students" WHERE ("students"."id" = 4) [0m
+Rendering template within layouts/students
+Rendering students/show
+Completed in 171ms (View: 15, DB: 0) | 200 OK [http://localhost/students/4]
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-27 10:56:38) [GET]
+  [4;35;1mStudent Load (16.0ms)[0m   [0mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 46ms (View: 15, DB: 16) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-27 11:08:40) [GET]
+  [4;36;1mStudent Load (0.0ms)[0m   [0;1mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-27 11:08:46) [GET]
+  [4;35;1mStudent Load (0.0ms)[0m   [0mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 32ms (View: 16, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-27 11:09:59) [GET]
+  [4;36;1mStudent Load (0.0ms)[0m   [0;1mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 31ms (View: 15, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-27 11:10:41) [GET]
+  [4;35;1mStudent Load (0.0ms)[0m   [0mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 63ms (View: 31, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-27 11:18:33) [GET]
+
+SyntaxError (C:/Ruby/students/app/controllers/students_controller.rb:91: syntax error, unexpected kEND, expecting $end):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (141.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2009-07-27 11:18:42) [GET]
+  Parameters: {"id"=>"4"}
+
+SyntaxError (C:/Ruby/students/app/controllers/students_controller.rb:91: syntax error, unexpected kEND, expecting $end):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (112.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2009-07-27 11:18:47) [GET]
+
+SyntaxError (C:/Ruby/students/app/controllers/students_controller.rb:91: syntax error, unexpected kEND, expecting $end):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (275.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StudentsController#new (for 127.0.0.1 at 2009-07-27 11:19:21) [GET]
+Rendering template within layouts/students
+Rendering students/new
+Completed in 63ms (View: 16, DB: 0) | 200 OK [http://localhost/students/new]
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-27 11:19:29) [GET]
+  [4;36;1mStudent Load (15.0ms)[0m   [0;1mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 63ms (View: 32, DB: 15) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#find (for 127.0.0.1 at 2009-07-27 11:19:34) [POST]
+  Parameters: {"search_string"=>"hadi", "commit"=>"Search", "authenticity_token"=>"moBrvq4crqcTvS6cZC5TtuVtzIBzyQ/jPYXXgb2llUs="}
+
+ActionController::UnknownAction (No action responded to find. Actions: create, destroy, edit, index, new, show, and update):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing StudentsController#show (for 127.0.0.1 at 2009-07-27 11:19:34) [GET]
+  Parameters: {"id"=>"find"}
+  [4;35;1mStudent Load (1.0ms)[0m   [0mSELECT * FROM "students" WHERE ("students"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Student with ID=find):
+  app/controllers/students_controller.rb:16:in `show'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (156.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-27 11:19:39) [GET]
+  [4;36;1mStudent Load (0.0ms)[0m   [0;1mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#new (for 127.0.0.1 at 2009-07-27 11:21:41) [GET]
+Rendering template within layouts/students
+Rendering students/new
+Completed in 47ms (View: 15, DB: 0) | 200 OK [http://localhost/students/new]
+
+
+Processing StudentsController#create (for 127.0.0.1 at 2009-07-27 11:22:14) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"moBrvq4crqcTvS6cZC5TtuVtzIBzyQ/jPYXXgb2llUs=", "student"=>{"nama"=>"tryje", "matrik"=>"P50000", "email"=>"tryje@ukm.edu.my"}}
+  [4;35;1mStudent Create (0.0ms)[0m   [0mINSERT INTO "students" ("updated_at", "nama", "matrik", "email", "created_at") VALUES('2009-07-27 03:22:14', 'tryje', 'P50000', 'tryje@ukm.edu.my', '2009-07-27 03:22:14')[0m
+Redirected to http://localhost:3000/students/5
+Completed in 219ms (DB: 0) | 302 Found [http://localhost/students]
+
+
+Processing StudentsController#show (for 127.0.0.1 at 2009-07-27 11:22:14) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mStudent Load (1.0ms)[0m   [0;1mSELECT * FROM "students" WHERE ("students"."id" = 5) [0m
+Rendering template within layouts/students
+Rendering students/show
+Completed in 25ms (View: 12, DB: 1) | 200 OK [http://localhost/students/5]
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-27 11:22:18) [GET]
+  [4;35;1mStudent Load (16.0ms)[0m   [0mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 62ms (View: 31, DB: 16) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-27 11:24:27) [GET]
+  [4;36;1mStudent Load (0.0ms)[0m   [0;1mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#find (for 127.0.0.1 at 2009-07-27 11:24:33) [POST]
+  Parameters: {"search_string"=>"hadi", "commit"=>"Search", "authenticity_token"=>"moBrvq4crqcTvS6cZC5TtuVtzIBzyQ/jPYXXgb2llUs="}
+
+NameError (uninitialized constant StudentsController::ClientWorkout):
+  app/controllers/students_controller.rb:87:in `find'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (150.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-27 11:24:39) [GET]
+  [4;35;1mStudent Load (0.0ms)[0m   [0mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 63ms (View: 31, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#find (for 127.0.0.1 at 2009-07-27 11:24:43) [POST]
+  Parameters: {"search_string"=>"hadi", "commit"=>"Search", "authenticity_token"=>"moBrvq4crqcTvS6cZC5TtuVtzIBzyQ/jPYXXgb2llUs="}
+
+NameError (uninitialized constant StudentsController::ClientWorkout):
+  app/controllers/students_controller.rb:87:in `find'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (117.0ms)
+Rendered rescues/_request_and_response (32.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-27 11:24:50) [GET]
+  [4;36;1mStudent Load (0.0ms)[0m   [0;1mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 79ms (View: 31, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-27 11:26:53) [GET]
+  [4;35;1mStudent Load (0.0ms)[0m   [0mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 46ms (View: 15, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#find (for 127.0.0.1 at 2009-07-27 11:26:55) [POST]
+  Parameters: {"search_string"=>"hadi", "commit"=>"Search", "authenticity_token"=>"moBrvq4crqcTvS6cZC5TtuVtzIBzyQ/jPYXXgb2llUs="}
+
+NameError (uninitialized constant StudentsController::ClientWorkout):
+  app/controllers/students_controller.rb:87:in `find'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (123.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-27 11:26:58) [GET]
+  [4;36;1mStudent Load (0.0ms)[0m   [0;1mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 47ms (View: 32, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#find (for 127.0.0.1 at 2009-07-27 11:27:03) [POST]
+  Parameters: {"search_string"=>"hadi", "commit"=>"Search", "authenticity_token"=>"moBrvq4crqcTvS6cZC5TtuVtzIBzyQ/jPYXXgb2llUs="}
+
+NameError (uninitialized constant StudentsController::ClientWorkout):
+  app/controllers/students_controller.rb:87:in `find'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (150.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StudentsController#find (for 127.0.0.1 at 2009-07-27 11:29:52) [POST]
+  Parameters: {"search_string"=>"hadi", "commit"=>"Search", "authenticity_token"=>"moBrvq4crqcTvS6cZC5TtuVtzIBzyQ/jPYXXgb2llUs="}
+  [4;35;1mStudent Load (0.0ms)[0m   [0mSELECT * FROM "students" WHERE (nama = 'hadi' OR matrik = 'hadi') [0m
+
+ActionView::MissingTemplate (Missing template students/find.erb in view path app/views):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2009-07-27 11:29:58) [GET]
+  [4;36;1mStudent Load (0.0ms)[0m   [0;1mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 228ms (View: 198, DB: 0) | 200 OK [http://localhost/students]
+
+
+Processing StudentsController#find (for 127.0.0.1 at 2009-07-27 11:32:37) [POST]
+  Parameters: {"search_string"=>"hADI", "commit"=>"Search", "authenticity_token"=>"moBrvq4crqcTvS6cZC5TtuVtzIBzyQ/jPYXXgb2llUs="}
+  [4;35;1mStudent Load (0.0ms)[0m   [0mSELECT * FROM "students" WHERE (nama = 'hADI' OR matrik = 'hADI') [0m
+
+ActionView::MissingTemplate (Missing template students/find.erb in view path app/views):
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
