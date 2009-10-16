@@ -1,0 +1,654 @@
+
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[conference, compsoc]{IEEEtran}
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+   \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+   \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+   \DeclareGraphicsExtensions{.pdf,.jpg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+   \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+   \graphicspath{{../eps/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+   \DeclareGraphicsExtensions{.eps, .jpg}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{A Review On Security In Grid Computing}
+
+% author names and affiliations
+% use a multiple column layout for up to two different
+% affiliations
+
+\author{\IEEEauthorblockN{Abdul Hadi Jehmica Bin Abdullah (Author)}
+\IEEEauthorblockA{Course Subject : Client-Server Computing (TS6234)\\
+Fakulti Teknologi Dan Sains Maklumat (FTSM)\\
+Universiti Kebangsaan Malaysia (UKM)\\
+Student No. : P50117 ; E-mail : hadiFedEx@gmail.com \\
+\\
+Keywords : Grid Computing, Secure Grid Computing, Trusted Grid Computing}
+}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+% make the title area
+\maketitle
+
+
+\begin{abstract}
+%\boldmath
+A Grid computing system is a geographically distributed environment that share resources amongst themselves. One primary goal of such a Grid environment is to encourage domain-to-domain interactions and increase the confidence of domains to use or share resources without losing control over their own resources and ensuring security or confidentiality for others. A comprehensive set of Grid Computing usage scenarios are presented and analysed with regard to security requirements such as authentication, authorization, or Confidentiality, Integrity and Availability (CIA). Grid security is enforced through trust update, propagation and integration across sites. Trusted Grid Computing demands robust resource allocation with security assurance at all resource sites. There is also a paper which analyses the unique security requirements of large-scale Grid Computing and develops a security policy and a corresponding security architecture.  These show a broader goal to increase the awareness of security issues in Grid Computing.
+\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the conference you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals/conferences frown on
+% math in the abstract anyway.
+
+% no keywords
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+% no \IEEEPARstart
+Grid computing is the combination of computer resources from multiple administrative domains applied to a common task, usually to a scientific, technical or business problem that requires a great number of computer processing cycles or the need to process large amounts of data. One of the main strategies of grid computing is using software to divide and apportion pieces of a program among several computers, sometimes up to many thousands. Grid computing is distributed, large-scale cluster computing, as well as a form of network distributed parallel processing [11]. The size of grid computing may be different from being small confined to a network of computer workstations within a corporation, for example, to being large public collaboration across many companies and networks. The idea of a confined grid may also be known as an intra-nodes cooperation whilst the notion of a larger, wider grid may thus refer to an inter-nodes cooperation. This inter or intra nodes cooperation across cyber based collaborative organizations are also known as "Virtual Organizations" (VOs) [2]. \\
+\\
+It is a form of distributed computing whereby a "super and virtual computer" is composed of a cluster of networked loosely coupled computers acting in concert to perform very large tasks [5]. This technology has been applied to computationally intensive scientific, mathematical, and academic problems through volunteer computing, and it is used in commercial enterprises for such diverse applications as drug discovery, economic forecasting, seismic analysis, and back-office data processing in support of e-commerce and Web services. What distinguishes grid computing from conventional cluster computing systems is that grids tend to be more loosely coupled, heterogeneous and geographically dispersed. Furthermore, while a computing grid may be dedicated to a specialised application, it is often constructed with the aid of general purpose grid software libraries and middle ware.
+
+% You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+% I wish you the best of success.
+
+\hfill ahja
+ 
+\hfill 31 August 2009
+
+% \subsection{Subsection Heading Here}
+% Subsection text here.
+
+% \subsubsection{Subsubsection Heading Here}
+% Subsubsection text here.
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation Results}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command, the
+% \label for the overall figure must come after \caption.
+% \hfil must be used as a separator to get equal spacing.
+% The subfigure.sty package works much the same way, except \subfigure is
+% used instead of \subfloat.
+%
+%\begin{figure*}[!t]
+%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
+%\label{fig_second_case}}}
+%\caption{Simulation results}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+% An example of a floating table. Note that, for IEEE style tables, the 
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals/conferences use top floats
+% exclusively. Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the \fnbelowfloat
+% command of the stfloats package.
+
+\section{Background}
+The goal of Grid Computing is to create a “virtual organization” (VO) across one or more physical organizations. Securing a Grid environment presents a distinctive set of challenges. The resulting value of the virtual organization to users in each of the physical organizations is that the users can be more productive, either
+in their own activities or in their collaborations with other people across the virtual organization (VO). This enhanced productivity is achieved by having access to a greater number or variety of resources such as computers, databases, or any others particular equipments.\\
+\\
+Computational Grids are motiviated by the desire to share processing resources among many organizations to solve large-scale problems [3, 5]. Normally, a Grid is used for executing a large number of jobs at dispersed resource sites. Each site executes not only local jobs but also jobs submitted from remote sites. Thus, job outsourcing becomes a major trend in Grid computing. However, job outsourcing faces the problems of inevitable security threats and doubtful trustworthiness of remote resources [6]. Indeed, Grid sites may exhibit unacceptable security conditions and system vulnerabilities [7, 8].
+
+\section{Grid Computing Security}
+Secure operation in a Grid environment requires that applications and services be capable
+of supporting a variety of security functionality, such as authentication, authorization, credential
+conversion, auditing, and delegation. Grid applications need to interact with other applications and services that have a range of security mechanisms and requirements. These mechanisms and requirements are likely to evolve over time as new mechanisms are developed or policies change. Grid applications must avoid embedding security mechanisms statically in order to adapt to changing requirements.\\
+\\
+While scalability, performance and heterogeneity are desirable goals for any distributed system, the characteristics
+of computational grids lead to security problems that are not addressed by existing security technologies for distributed systems. For example, parallel computations that acquire multiple computational resources introduce the need to establish security relationships not simply between a client and a server, but among potentially hundreds of processes that collectively span many administrative domains. Furthermore, the dynamic nature of the grid can make it impossible to establish trust relationships between sites prior to application execution. Finally, the interdomain security solutions used for grids must be able to interoperate with, rather than replace, the diverse intradomain access control technologies inevitably encountered in individual domains [9].
+
+\section{Issues And Challenges}
+
+\subsection{Grid Security}
+We introduce the grid security problem with an example illustrated in Figure 1 [9]. We imagine a scientist, a member of a multi-institutional scientific collaboration, who receives e-mail from a colleague regarding a new data set. He starts an analysis program, which dispatches code to the remote location where the data is stored (site C). Once started, the analysis program determines that it needs to run a simulation in order to compare the experimental results with predictions. Hence, it contacts a resource broker service maintained by the collaboration (at site D), in order to locate idle resources that can be used for the simulation. The resource broker in turn initiates computation on computers at two sites (E and G). These computers access parameter values stored on a file system at yet another site (F) and also communicate among themselves (perhaps using specialized protocols, such as multicast) and with the broker, the original site, and the user.\\
+\\
+From a security standpoint, the users, the applications, or the grid middleware or some combination of
+the three must be trusted [10]. In dynamic, scalable, wide-area computing environments, it is generally impractical
+to expect that all users can be held accountable for their actions. Accountability comes after the damage has been
+done, making this a costly solution. Another option is to trust the applications. This is typically accomplished
+either by constraining the development environment to a point where the generated applications are guaranteed
+to be safe or by making sure that the applications come from a trusted source. However, limiting the functionality
+of applications also limits the usefulness of the computing environment. History has shown that it is too easy for applications from trusted sources to contain bugs that compromise the integrity of resources [10].\\
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.0in]{figure2}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+\caption{Example of a large-scale distributed computation: user initiates a computation that accesses data and computingmresources at multiple locations [9].}
+\label{figure2}
+\end{figure}
+
+Figure 1 Example Illustrates Many Of The Distinctive Characteristics Of The Grid Computing Environment : \\
+\\
+4.1.1. The user population is large and dynamic. Participants in such virtual organizations as this scientific
+collaboration will include members of many institutions and will change frequently;\\
+\\
+4.1.2. The resource pool is large and dynamic. Because individual institutions and users decide whether and when
+to contribute resources, the quantity and location of available resources can change rapidly;\\
+\\
+4.1.3. A computation (or processes created by a computation) may acquire, start processes on, and release resources
+dynamically during its execution. Even in our simple example, the computation acquired (and later released) resources at five sites. In other words, throughout its lifetime, a computation is composed of a dynamic group of processes running on different resources and sites;\\
+\\
+4.1.4 The processes constituting a computation may communicate by using a variety of mechanisms, including
+unicast and multicast. While these processes form a single, fully connected logical entity, low-level communication
+connections (e.g., TCP/IP sockets) may be created and destroyed dynamically during program execution.\\
+\\
+4.1.5. Resources may require different authentication and authorization mechanisms and policies, which we will
+have limited ability to change. In Figure 1, we indicate this situation by showing the local access control
+policies that apply at the different sites. These include Kerberos, plaintext passwords, Secure Socket Library (SSL), and secure shell.\\
+\\
+4.1.6. An individual user will be associated with different local name spaces, credentials, or accounts, at different sites, for the purposes of accounting and access control. At some sites, a user may have a regular account. At others, the user may use a dynamically assigned guest account or simply an account created for the collaboration.\\
+\\
+4.1.7. Resources and users may be located in different countries. To summarize, the problem we face is providing security solutions that can allow computations, such as the one just described, to coordinate diverse access control policies and to operate securely in heterogeneous environments.\\
+\\
+
+\subsection{Virtual Organizations (VOs)}
+Security requirements within the Grid environment are driven by the need to support
+scalable, dynamic, distributed virtual organizations (VOs) collections of diverse
+and distributed individuals that seek to share and use diverse resources in a coordinated fashion [6].
+From a security perspective, a key attribute of VOs is that participants and resources are
+governed by the rules and policies of the classical organizations of which they are
+members. Furthermore, while some VOs, such as multiyear scientific collaborations, may be large
+and long-lived (in which case explicit negotiations with resource providers are acceptable), others will be short-lived—created, perhaps, to support a single task, for example, two individuals sharing documents and data as
+they write a proposal—in which case overheads associated with VO creation and operation have to be small.\\
+\\
+A fundamental requirement is thus to enable VO access to resources that exist within classical
+organizations and that, from the perspective of those classical organizations, have policies in
+place that speak only about local users. This VO access must be established and coordinated only
+through binary trust relationships that exist between (a) the local user and their organization
+and (b) the VO and the user. We cannot, in general, assume trust relationships between the
+classical organization and the VO or its external members. Grid security mechanisms address these
+challenges by allowing a VO to be treated as a policy domain overlay as shown in Figure 2 [2].
+Multiple resources or organizations outsource certain policy control(s) to a third party, the VO,
+which coordinates the outsourced policy in a consistent manner to allow for coordinated
+resource sharing and use.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.0in]{figure1}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+\caption{Virtual organization policy
+domain overlay pulls together
+participants from disparate domains
+into a common trust domain [2].}
+\label{figure1}
+\end{figure}
+
+\section{Conclusion}
+Indeed, to completely specify a job security demand, we need to use complex vectors of attributes to fully
+specify the requirements involving all of the aforementioned parameters. This is obviously an unreasonable
+burden on Grid users. Unfortunately, up to now, there is no effective methodology to assess trust index of
+resource sites. A weighted sum of security parameter values will not work, because it is difficult to deterministically determine the weights and even the correct set of parameters to be included in real-time [4]. We can see that the matching of the job security demand with the site trustworthiness is an important system issue, which was largely ignored by the cyber security community. \\
+\\
+Furthermore, the grid computing systems are being positioned as a computing infrastructure that will enable pools of resources to be shared across institutional boundaries. Unfortunately, the idea of sharing poses some concerns such as privacy and confidentiality. Hence, 'trust' should be addressed in such a distributed environment. Apart from that, the most significant challenges for Grid computing is to develop a comprehensive set of mechanisms and policies for securing the Grid.
+
+% conference papers do not normally have an appendix
+
+% use section* for acknowledgement
+\section*{Acknowledgment}
+I am grateful and would like to thank Mr. Mohd Zamri Murah (The Lecturer and Instructer) for his fruitful advice, thought and knowledge in order to complete this paper. This review paper is submitted as required for each students to do so for the TS6234 course under the Masters of Information Technology (Management Information System) at the National University of Malaysia.
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+\begin{thebibliography}{1}
+
+\bibitem{humphrey2002security}
+Humphrey, M. and Thompson, M.R., \emph{Security Implications of Typical Grid computing Usage Scenarios}, Cluster Computing.\hskip 1em plus
+  0.5em minus 0.4em\relax Springer, 1999.
+  
+\bibitem{welch2003security}
+Welch, V. and Siebenlist, F. and Foster, I. and Bresnahan, J. and Czajkowski, K. and Gawor, J. and Kesselman, C. and Meder, S. and Pearlman, L. and Tuecke, S., \emph{Security For Grid Services}, Twelfth International Symposium on High Performance Distributed Computing (HPDC-12)\hskip 1em plus
+  0.5em minus 0.4em\relax Springer, 2003.
+  
+\bibitem{berman2003grid}
+Berman, F. and Fox, G. and Hey, A.J.G., \emph{Grid Computing: Making The Global Infrastructure a Reality}, Journal of Grid Computing.\hskip 1em plus
+  0.5em minus 0.4em\relax Wiley, 2003.
+
+\bibitem{song2005trusted}
+Song, S. and Hwang, K. and Kwok, Y.K., \emph{Trusted Grid Computing With Security Binding and Trust Integration}, Journal of Grid Computing.\hskip 1em plus
+  0.5em minus 0.4em\relax Springer, 2005.
+
+\bibitem{cosnard2002meta}
+Cosnard, M. and Merzky, A., \emph{Meta-and Grid-Computing}, Journal of Grid Computing.\hskip 1em plus
+  0.5em minus 0.4em\relax Springer-Verlag London, UK, 2002.
+  
+\bibitem{nagaratnam2002security}
+Nagaratnam, N. and Janson, P. and Dayka, J. and Nadalin, A. and Siebenlist, F. and Welch, V. and Foster, I. and Tuecke, S., \emph{The Security Architecture For Open Grid Services}, Journal of Grid Computing.\hskip 1em plus
+  0.5em minus 0.4em\relax Version, 2002.
+
+\bibitem{humphrey2002security}
+Humphrey, M. and Thompson, M.R., \emph{Security Implications of Typical Grid Computing Usage Scenarios}, Cluster Computing.\hskip 1em plus
+  0.5em minus 0.4em\relax Springer, 2002.
+
+\bibitem{hwang2003flexible}
+Hwang, S. and Kesselman, C., \emph{A Flexible Framework For Fault Tolerance In The Grid}, Journal of Grid Computing. \hskip 1em plus
+  0.5em minus 0.4em\relax Springer, 2003.
+  
+\bibitem{foster1998security}
+Hwang, S. and Kesselman, C., \emph{A security Architecture For Computational Grids}, Proceedings of the 5th ACM Conference on Computer and Communications Security.  \hskip 1em plus
+  0.5em minus 0.4em\relax ACM New York, NY, USA, 1998.
+
+\bibitem{butt2003grid}
+Butt, A.R. and Adabala, S. and Kapadia, N.H. and Figueiredo, R.J. and Fortes, J.A.B., \emph{Grid-Computing Portals And Security Issues},Journal of Parallel and Distributed Computing.  \hskip 1em plus
+  0.5em minus 0.4em\relax New York, NY: Academic Press, 2003.  
+  
+\bibitem{humphrey2005security}
+Humphrey, M. and Thompson, M.R. and Jackson, K.R., \emph{Security For Grids},Proceedings of the IEEE.  \hskip 1em plus
+  0.5em minus 0.4em\relax New York, NY: Citeseer, 2005. 
+  
+  
+\end{thebibliography}
+
+% that's all folks
+\end{document}
+
+
